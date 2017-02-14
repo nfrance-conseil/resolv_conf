@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/GeoffWilliams/resolv_conf.svg?branch=master)](https://travis-ci.org/GeoffWilliams/resolv_conf)
 # resolve_conf
 
 #### Table of Contents
