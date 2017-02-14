@@ -37,4 +37,13 @@ class resolv_conf(
     mode    => $resolv_conf_mode,
     content => epp("${module_name}/resolv.conf.epp", $template_vars),
   }
+
+  # On Solaris must also bounce the dns client service
+  if $facts['os']['family'] == "Solaris" {
+    Service { "dns/client":
+      ensure    => running,
+      enable    => true,
+      subscribe => File[$resolv_conf_path],
+    }
+  }
 }

@@ -85,6 +85,7 @@ describe 'resolv_conf' do
   context "Solaris" do
     let :facts do
       {
+        :operatingsystem => "SunOS",
         :os => {
           "family"      => "Solaris",
         }
