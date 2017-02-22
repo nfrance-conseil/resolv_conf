@@ -24,7 +24,7 @@ describe 'resolv_conf' do
       it { should contain_file('/etc/resolv.conf').with(
         {
           :owner => "root",
-          :group => "root",
+          :group => "0",
           :mode  => "0644",
         }
       )}
@@ -63,7 +63,7 @@ describe 'resolv_conf' do
       it { should contain_file('/etc/resolv.conf').with(
         {
           :owner => "root",
-          :group => "root",
+          :group => "0",
           :mode  => "0644",
         }
       )}
@@ -103,7 +103,7 @@ describe 'resolv_conf' do
       it { should contain_file('/etc/resolv.conf').with(
         {
           :owner => "root",
-          :group => "sys",
+          :group => "0",
           :mode  => "0644",
         }
       )}
