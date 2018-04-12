@@ -41,6 +41,45 @@ describe 'resolv_conf' do
   end
 
   #
+  # Debian
+  #
+  context "Debian" do
+    let :facts do
+      {
+        :os => {
+          "family"      => "Debian",
+        }
+      }
+    end
+    context "catalog compiles" do
+      it { should compile}
+    end
+
+    context 'with default values for all parameters' do
+      it { should contain_class('resolv_conf') }
+    end
+
+    context 'correct permissions' do
+      it { should contain_file('/etc/resolv.conf').with(
+        {
+          :owner => "root",
+          :group => "0",
+          :mode  => "0644",
+        }
+      )}
+    end
+
+    context 'correct search line' do
+      let :params do
+        {
+          :search => "megacorp.com",
+        }
+      end
+      it { should contain_file('/etc/resolv.conf').with_content(/search megacorp.com/)}
+    end
+  end
+
+  #
   # AIX
   #
   context "AIX" do

@@ -22,6 +22,10 @@ class resolv_conf::params {
       $search_keyword     = "search"
       $options            = []
     }
+    "Debian": {
+      $search_keyword     = "search"
+      $options            = []
+    }
     "FreeBSD": {
       $search_keyword     = "search"
       $options            = []
