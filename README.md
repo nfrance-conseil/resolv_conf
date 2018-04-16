@@ -11,7 +11,7 @@
 
 ## Description
 
-Manage `/etc/resolv.conf` on AIX, Solaris, RHEL and FreeBSD with Puppet.
+Manage `/etc/resolv.conf` on AIX, Solaris, RHEL, Debian and FreeBSD with Puppet.
 
 ## Setup
 
